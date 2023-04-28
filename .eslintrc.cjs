@@ -8,8 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'plugin:react/jsx-runtime',
-    '@commitlint/config-conventional'
+    'plugin:react/jsx-runtime'
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
