@@ -7,7 +7,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 --fix --quiet ./",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "config": {
     "commitizen": {
@@ -15,8 +16,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts}": [
-      "npm run lint"
+    "*.{js,jsx,tsx,ts}": "npm run lint",
+    "**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
