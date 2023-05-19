@@ -18,9 +18,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts}": "eslint --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 --fix --quiet ./src",
-    "**/*.{js,jsx,tsx,ts,less,scss,md,json}": "prettier --write \"src/**/*.{ts,tsx,js,json,md}\"",
-    "**/*.{less,css}": "stylelint \"src/**/*.{css,less}\" --fix  --custom-syntax postcss-less"
+    "*.{js,jsx,tsx,ts}": "npm run lint",
+    "**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
+      "npm run format"
+    ],
+    "**/*.{less,css}": "npm run lint:style"
   },
   "dependencies": {
     "react": "^18.2.0",
