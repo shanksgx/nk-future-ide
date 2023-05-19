@@ -20,8 +20,9 @@
   "lint-staged": {
     "*.{js,jsx,tsx,ts}": "npm run lint",
     "**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
-      "prettier --write"
-    ]
+      "npm run format"
+    ],
+    "**/*.{less,css}": "npm run lint:style"
   },
   "dependencies": {
     "react": "^18.2.0",
