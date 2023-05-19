@@ -1,0 +1,9 @@
+**/*.png
+**/*.svg
+**/*.jpg
+**/*.jpeg
+**/*.webp
+package.json
+dist
+.DS_Store
+node_modules

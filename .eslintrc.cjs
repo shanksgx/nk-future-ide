@@ -21,8 +21,13 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
     'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off'
+    'prefer-arrow-callback': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        singleAttributePerLine: false // 不强制要求一个属性占一行
+      }
+    ]
   }
 }
