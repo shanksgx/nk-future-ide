@@ -6,11 +6,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 --fix --quiet ./src",
+    "clean": "rimraf node_modules",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 --fix --quiet ./src",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,md}\"",
-    "lint:style": "stylelint \"src/**/*.{css,less}\" --fix  --custom-syntax postcss-less",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "stylelint": "stylelint \"src/**/*.{css,less}\" --fix  --custom-syntax --cache",
+    "pre-commit": "npm run format && npm run eslint && npm run stylelint",
+    "prepare": "husky install && husky add .husky/pre-commit 'npm run pre-commit'",
+    "commit": "git cz",
+    "preinstall": "npx only-allow pnpm"
   },
   "config": {
     "commitizen": {
@@ -18,11 +21,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts}": "npm run lint",
-    "*.{js,jsx,tsx,ts,less,scss,md,json}": [
-      "npm run format"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --cache"
     ],
-    "*.{less,css}": "npm run lint:style"
+    "*.{css, less}": [
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
