@@ -1,4 +1,4 @@
-@import '@arco-design/web-react/dist/css/arco.css';
+@import url('@arco-design/web-react/dist/css/arco.css');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
