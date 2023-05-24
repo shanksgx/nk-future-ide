@@ -1,6 +1,7 @@
 import { type FC, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import reactLogo from '@/assets/react.svg'
+import viteLogo from '@/assets/vite.svg'
+import { Button } from '@arco-design/web-react'
 import './App.css'
 
 const App: FC = () => {
@@ -21,6 +22,7 @@ const App: FC = () => {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <Button type="primary">Hello Arco</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
